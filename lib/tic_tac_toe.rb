@@ -147,7 +147,7 @@ end
   end
 
   def draw?
-      if won?(board) || !full?(board)
+      if won? || !full?
         false
       else
         true
@@ -155,7 +155,7 @@ end
     end
 
     def over?
-        if won?(board) || draw?(board) || full?(board)
+        if won? || draw? || full?
           true
         else
           false
@@ -163,8 +163,8 @@ end
     end
 
     def winner
-      if won?(board) != nil
-        winCombo = won?(board)
+      if won? != nil
+        winCombo = won?
         if board[winCombo[0]] == "X"
         "X"
         elsif board[winCombo[0]] == "O"
