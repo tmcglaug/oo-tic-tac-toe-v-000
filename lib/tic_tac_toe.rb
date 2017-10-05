@@ -57,7 +57,7 @@ end
     end
     if won?
       puts "Congratulations #{winner(board)}!"
-      break
+      
     elsif draw?
       puts "Cat's Game!"
     end
