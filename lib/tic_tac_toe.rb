@@ -31,7 +31,7 @@ end
     board[index] = current_player
   end
 
-  def position_taken?(board, location)
+  def position_taken?(location)
     board[location] != " " && board[location] != ""
   end
 
