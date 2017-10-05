@@ -35,11 +35,11 @@ end
     board[location] != " " && board[location] != ""
   end
 
-  def valid_move?(board, index)
+  def valid_move?(index)
     index.between?(0,8) && !position_taken?(board, index)
   end
 
-  def turn(board)
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -62,7 +62,7 @@ end
     end
   end
 
-  def over?(board)
+  def over?
       if won?(board) || draw?(board) || full?(board)
         true
       else
@@ -71,12 +71,12 @@ end
   end
 
 
-  def current_player(board)
+  def current_player
 
   playerX = "X"
   playerO = "O"
 
-  turns = turn_count(board)
+  turns = turn_count
   remainder = turns % 2
 
   if remainder == 0
@@ -89,7 +89,7 @@ end
 
   end
 
-  def turn_count(board)
+  def turn_count
 
   count = 0
 
@@ -111,7 +111,7 @@ end
   end
 
   # Helper Method
-  def position_taken?(board, index)
+  def position_taken?(index)
     !(board[index].nil? || board[index] == " ")
   end
 
@@ -127,7 +127,7 @@ end
     [2, 4, 6] #right-to-left cross
   ]
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do |combo|
       if combo.all?{|i| board[i] == "X"} || combo.all?{|i| board[i] == "O"}
         return combo
@@ -140,13 +140,13 @@ end
    end
   end
 
-  def full?(board)
+  def full?
     if board.all?{|i| i == "X" || i == "O"}
      return true
    end
   end
 
-  def draw?(board)
+  def draw?
       if won?(board) || !full?(board)
         false
       else
@@ -154,7 +154,7 @@ end
       end
     end
 
-    def over?(board)
+    def over?
         if won?(board) || draw?(board) || full?(board)
           true
         else
@@ -162,7 +162,7 @@ end
         end
     end
 
-    def winner(board)
+    def winner
       if won?(board) != nil
         winCombo = won?(board)
         if board[winCombo[0]] == "X"
