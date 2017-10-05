@@ -2,7 +2,11 @@ class TicTacToe
 
 def initialize(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
 @board = board
-display_board
+
+display_board(board)
+
+play(board)
+
 end
 
 def board=(board)
