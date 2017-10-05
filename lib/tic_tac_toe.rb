@@ -2,7 +2,7 @@ class TicTacToe
 
 def initialize(board)
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-puts "Welcome to Tic Tac Toe!"
+
 end
 
 def board
