@@ -52,7 +52,7 @@ end
   end
 
   def play
-    until over?(board)
+    until over?
       turn
     end
     if won?
